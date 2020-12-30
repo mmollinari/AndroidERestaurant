@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">AndroidERestaurant</string>
+    <string name="app_name">DroidRestaurant</string>
+    <string name="home_title">Bienvenue chez</string>
+    <string name="home_starters">Entrées</string>
+    <string name="home_main_dishes">Plats</string>
+    <string name="home_desert">Déserts</string>
 </resources>
