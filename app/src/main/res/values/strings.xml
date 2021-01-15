@@ -1,7 +1,17 @@
 <resources>
     <string name="app_name">DroidRestaurant</string>
+
     <string name="home_title">Bienvenue chez</string>
     <string name="home_starters">Entrées</string>
     <string name="home_main_dishes">Plats</string>
     <string name="home_desert">Déserts</string>
+
+    <string name="detail_global_amount">Total %1s €</string>
+
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+    </string-array>
 </resources>
