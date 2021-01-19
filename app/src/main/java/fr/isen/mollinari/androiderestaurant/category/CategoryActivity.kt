@@ -2,14 +2,21 @@ package fr.isen.mollinari.androiderestaurant.category
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import fr.isen.mollinari.androiderestaurant.detail.DetailActivity
+import com.android.volley.Request
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import com.google.gson.GsonBuilder
 import fr.isen.mollinari.androiderestaurant.HomeActivity.Companion.CATEGORY_NAME
 import fr.isen.mollinari.androiderestaurant.R
 import fr.isen.mollinari.androiderestaurant.databinding.ActivityCategoryBinding
+import fr.isen.mollinari.androiderestaurant.detail.DetailActivity
 import fr.isen.mollinari.androiderestaurant.model.Dish
+import fr.isen.mollinari.androiderestaurant.model.MenuResult
+import org.json.JSONObject
 
 private lateinit var binding: ActivityCategoryBinding
 
@@ -20,28 +27,44 @@ class CategoryActivity : AppCompatActivity() {
         binding = ActivityCategoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val title = intent.getStringExtra(CATEGORY_NAME)
-        binding.categoryTitle.text = title
+        val categoryTitle = intent.getStringExtra(CATEGORY_NAME) ?: ""
+        binding.categoryTitle.text = categoryTitle
 
-        val dishes = resources.getStringArray(R.array.planets_array).map { Dish(it, 12.50, defaultPizzasUrl()) }
+        loadDishesFromCategory(categoryTitle)
+    }
 
+    private fun loadDishesFromCategory(category: String) {
+        val url = getString(R.string.server_domain) + "menu"
+
+        val jsonData = JSONObject()
+        jsonData.put("id_shop", "1")
+
+        val stringRequest = JsonObjectRequest(
+            Request.Method.POST, url, jsonData, { response ->
+                val menu = GsonBuilder().create().fromJson(response.toString(), MenuResult::class.java)
+                menu.data.firstOrNull { it.name == category }?.dishes?.let {
+                    displayDishes(it)
+                } ?: run {
+                    binding.categoryLoading.visibility = View.GONE
+                    binding.categoryErrorMessage.text = getString(R.string.category_error_empty)
+                }
+            },
+            {
+                Log.d("CategoryActivity", "That didn't work! ${it}")
+                binding.categoryLoading.visibility = View.GONE
+                binding.categoryErrorMessage.text = getString(R.string.category_error_server, category)
+            })
+
+        Volley.newRequestQueue(this).add(stringRequest)
+    }
+
+    private fun displayDishes(dishes: List<Dish>) {
+        binding.categoryLoading.visibility = View.GONE
         binding.categoryList.layoutManager = LinearLayoutManager(this)
-        binding.categoryList.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
         binding.categoryList.adapter = CategoryAdapter(dishes) {
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("Dish", it)
             startActivity(intent)
         }
-
     }
-
-    private fun defaultPizzasUrl() =
-        listOf(
-            "https://www.demotivateur.fr/images-buzz/188912/pizza-napolitaine-600x400.jpg",
-            "https://www.demotivateur.fr/images-buzz/188912/pizza-merguez-600x400.jpg",
-            "https://www.demotivateur.fr/images-buzz/188912/pizza-blanche-pommedeterre-thym-600x400.jpg",
-            "https://www.demotivateur.fr/images-buzz/188912/pizza-regina-600x400.jpg",
-            "https://www.demotivateur.fr/images-buzz/188912/pizza-marinara-600x400.jpg",
-            "https://www.demotivateur.fr/images-buzz/188912/pizza-calzone-600x400.jpg"
-        )
 }

@@ -6,7 +6,12 @@
     <string name="home_main_dishes">Plats</string>
     <string name="home_desert">Déserts</string>
 
-    <string name="detail_global_amount">Total %1s €</string>
+    <string name="category_error_server">Impossible de récupérer la liste des %1s. Veuillez réessayer plus tard</string>
+    <string name="category_error_empty">Aucun plat proposé à la carte du restaurant pour le moment. \n\nVeuillez réessayer plus tard</string>
+
+    <string name="detail_global_amount">Total %1s</string>
+
+    <string name="server_domain">http://test.api.catering.bluecodegames.com/</string>
 
     <string-array name="planets_array">
         <item>Mercury</item>

@@ -18,29 +18,41 @@ class DetailActivity : AppCompatActivity() {
 
         val dish = intent.getSerializableExtra("Dish") as Dish
         binding.titleDetail.text = dish.title
-        binding.button.text = getString(R.string.detail_global_amount, dish.price.toString())
+        binding.button.text = getString(R.string.detail_global_amount, dish.getFormattedPrice())
+
+        binding.ingredients.text = dish.ingredients.joinToString(", ") { it.name }
 
         var quantity = 1
         binding.quantity.text = "1"
         binding.more.setOnClickListener {
             if (quantity <= 1000) {
                 quantity++
-                updateAmountFromQuantity(quantity, dish.price)
+                updateAmountFromQuantity(quantity, dish.getPrice())
             }
         }
         binding.less.setOnClickListener {
             if (quantity > 1) {
                 quantity--
-                updateAmountFromQuantity(quantity, dish.price)
+                updateAmountFromQuantity(quantity, dish.getPrice())
             }
         }
 
-        binding.sliderPhotos.adapter = DishPhotoAdapter(this, dish.photos)
+        binding.sliderPhotos.adapter = DishPhotoAdapter(this, defaultPizzasUrl())
     }
+
+    private fun defaultPizzasUrl() =
+        listOf(
+            "https://www.demotivateur.fr/images-buzz/188912/pizza-napolitaine-600x400.jpg",
+            "https://www.demotivateur.fr/images-buzz/188912/pizza-merguez-600x400.jpg",
+            "https://www.demotivateur.fr/images-buzz/188912/pizza-blanche-pommedeterre-thym-600x400.jpg",
+            "https://www.demotivateur.fr/images-buzz/188912/pizza-regina-600x400.jpg",
+            "https://www.demotivateur.fr/images-buzz/188912/pizza-marinara-600x400.jpg",
+            "https://www.demotivateur.fr/images-buzz/188912/pizza-calzone-600x400.jpg"
+        )
 
     private fun updateAmountFromQuantity(quantity: Int, amount: Double) {
         binding.quantity.text = quantity.toString()
         binding.button.text =
-            getString(R.string.detail_global_amount, (amount * quantity).toString())
+            getString(R.string.detail_global_amount,"${(amount * quantity)}€")
     }
 }
