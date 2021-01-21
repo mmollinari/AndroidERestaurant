@@ -4,13 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.annotation.StringRes
-import androidx.appcompat.app.AppCompatActivity
 import fr.isen.mollinari.androiderestaurant.category.CategoryActivity
 import fr.isen.mollinari.androiderestaurant.databinding.ActivityHomeBinding
 
 private lateinit var binding: ActivityHomeBinding
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

@@ -9,6 +9,10 @@
     <string name="category_error_server">Impossible de récupérer la liste des %1s. Veuillez réessayer plus tard</string>
     <string name="category_error_empty">Aucun plat proposé à la carte du restaurant pour le moment. \n\nVeuillez réessayer plus tard</string>
 
+    <string name="basket_title">Panier</string>
+    <string name="basket_quantity">quantité : %1s</string>
+    <string name="basket_action">Passer commande</string>
+
     <string name="detail_global_amount">Total %1s</string>
 
     <string name="server_domain">http://test.api.catering.bluecodegames.com/</string>

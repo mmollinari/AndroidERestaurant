@@ -69,7 +69,7 @@
         tools:ignore="ContentDescription"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addToBasket"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

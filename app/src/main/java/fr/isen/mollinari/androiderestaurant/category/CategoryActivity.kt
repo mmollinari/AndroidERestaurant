@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.GsonBuilder
+import fr.isen.mollinari.androiderestaurant.BaseActivity
 import fr.isen.mollinari.androiderestaurant.HomeActivity.Companion.CATEGORY_NAME
 import fr.isen.mollinari.androiderestaurant.R
 import fr.isen.mollinari.androiderestaurant.databinding.ActivityCategoryBinding
@@ -20,7 +20,8 @@ import org.json.JSONObject
 
 private lateinit var binding: ActivityCategoryBinding
 
-class CategoryActivity : AppCompatActivity() {
+class CategoryActivity : BaseActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

@@ -17,6 +17,7 @@
         tools:ignore="UnusedAttribute">
         <activity android:name=".detail.DetailActivity" />
         <activity android:name=".category.CategoryActivity" />
+        <activity android:name=".basket.BasketActivity" />
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
