@@ -57,7 +57,7 @@
         android:gravity="center"
         android:text="@string/home_starters"
         android:textColor="@color/orange_500"
-        android:textSize="30sp"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/restaurantName" />
@@ -82,7 +82,7 @@
         android:gravity="center"
         android:text="@string/home_main_dishes"
         android:textColor="@color/orange_500"
-        android:textSize="30sp"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/starters" />
@@ -107,7 +107,7 @@
         android:gravity="center"
         android:text="@string/home_desert"
         android:textColor="@color/orange_500"
-        android:textSize="30sp"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainDishes" />

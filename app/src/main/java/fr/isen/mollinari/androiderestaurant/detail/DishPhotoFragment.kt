@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.squareup.picasso.Picasso
+import fr.isen.mollinari.androiderestaurant.R
 import fr.isen.mollinari.androiderestaurant.databinding.FragmentDishPhotoBinding
 
 private lateinit var binding: FragmentDishPhotoBinding
@@ -24,12 +25,12 @@ class DishPhotoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         arguments?.getString("URL")?.let {
-            Picasso.get().load(it).into(binding.photo)
+            Picasso.get().load(it).placeholder(R.drawable.android_logo_restaurant).into(binding.photo)
         }
     }
 
     companion object {
-        fun newInstance(url: String) =
+        fun newInstance(url: String?) =
             DishPhotoFragment().apply { arguments = Bundle().apply { putString("URL", url) } }
     }
 }

@@ -34,12 +34,16 @@ class BasketAdapter(private val entries: MutableList<ItemBasket>, private val de
             entries[position].quantity.toString()
         )
         Picasso.get()
-            .load("https://www.demotivateur.fr/images-buzz/188912/pizza-napolitaine-600x400.jpg")
+            .load(entries[position].dish.getFirstPicture())
+            .placeholder(R.drawable.android_logo_restaurant)
             .into(holder.dishPicture)
         holder.deleteDish.setOnClickListener {
-            deleteClickListener.invoke(entries[position])
-            entries.removeAt(position)
-            notifyDataSetChanged()
+            if(position < entries.size) {
+                val elementToRemove = entries[position]
+                deleteClickListener.invoke(elementToRemove)
+                entries.remove(elementToRemove)
+                notifyDataSetChanged()
+            }
         }
     }
 

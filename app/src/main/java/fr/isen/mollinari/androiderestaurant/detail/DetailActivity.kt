@@ -52,23 +52,13 @@ class DetailActivity : BaseActivity() {
             }
         }
 
-        binding.sliderPhotos.adapter = DishPhotoAdapter(this, defaultPizzasUrl())
+        binding.sliderPhotos.adapter = DishPhotoAdapter(this, dish.getAllPictures())
 
         binding.addToBasket.setOnClickListener {
             Snackbar.make(binding.root, "Votre plat a bien été ajouté à votre panier.", Snackbar.LENGTH_LONG).show()
             saveInBasket(quantity, dish)
         }
     }
-
-    private fun defaultPizzasUrl() =
-        listOf(
-            "https://www.demotivateur.fr/images-buzz/188912/pizza-napolitaine-600x400.jpg",
-            "https://www.demotivateur.fr/images-buzz/188912/pizza-merguez-600x400.jpg",
-            "https://www.demotivateur.fr/images-buzz/188912/pizza-blanche-pommedeterre-thym-600x400.jpg",
-            "https://www.demotivateur.fr/images-buzz/188912/pizza-regina-600x400.jpg",
-            "https://www.demotivateur.fr/images-buzz/188912/pizza-marinara-600x400.jpg",
-            "https://www.demotivateur.fr/images-buzz/188912/pizza-calzone-600x400.jpg"
-        )
 
     private fun updateAmountFromQuantity(quantity: Int, amount: Double) {
         binding.quantity.text = quantity.toString()
@@ -101,6 +91,7 @@ class DetailActivity : BaseActivity() {
         File(cacheDir.absolutePath + BASKET_FILE).writeText(
             GsonBuilder().create().toJson(newBasket)
         )
+        invalidateOptionsMenu()
     }
 
     private fun saveDishCountInPref(basket: Basket) {

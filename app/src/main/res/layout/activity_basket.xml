@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/raleway_semibold"
-        android:textColor="@color/orange_500"
-        android:textSize="24sp"
         android:text="@string/basket_title"
+        android:textColor="@color/orange_500"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +43,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/basketList" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/order"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
