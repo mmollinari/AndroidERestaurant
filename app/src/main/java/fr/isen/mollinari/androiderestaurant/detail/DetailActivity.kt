@@ -3,6 +3,7 @@ package fr.isen.mollinari.androiderestaurant.detail
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import androidx.core.view.isVisible
 import com.google.android.material.snackbar.Snackbar
 import com.google.gson.GsonBuilder
 import fr.isen.mollinari.androiderestaurant.BaseActivity
@@ -52,7 +53,13 @@ class DetailActivity : BaseActivity() {
             }
         }
 
-        binding.sliderPhotos.adapter = DishPhotoAdapter(this, dish.getAllPictures())
+        dish.getAllPictures()?.let {
+            binding.defaultPhoto.isVisible = false
+            binding.sliderPhotos.adapter = DishPhotoAdapter(this, it)
+        } ?: run {
+            binding.sliderPhotos.isVisible = false
+            binding.defaultPhoto.isVisible = true
+        }
 
         binding.addToBasket.setOnClickListener {
             Snackbar.make(binding.root, "Votre plat a bien été ajouté à votre panier.", Snackbar.LENGTH_LONG).show()

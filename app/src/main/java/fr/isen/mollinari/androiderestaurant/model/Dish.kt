@@ -21,6 +21,6 @@ data class Dish(
     fun getAllPictures() = if (pictures.isNotEmpty() && pictures.any { it.isNotEmpty() }) {
         pictures.filter { it.isNotEmpty() }
     } else {
-        listOf(null)
+        null
     }
 }
