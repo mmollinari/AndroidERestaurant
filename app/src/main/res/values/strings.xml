@@ -19,17 +19,12 @@
     <string name="register_title">Inscription</string>
     <string name="register_first_name">prénom</string>
     <string name="register_last_name">nom</string>
-    <string name="register_login">e-mail</string>
+    <string name="register_mail">e-mail</string>
     <string name="register_address">adresse</string>
     <string name="register_password">mot de passe</string>
     <string name="register_confirm">Valider</string>
-
-
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-    </string-array>
+    <string name="register_login">Vous avez déjà un compte ?</string>
+    <string name="login_title">Connexion</string>
+    <string name="login_register">Inscrivez vous si vous n\'avez pas de compte</string>
 
 </resources>

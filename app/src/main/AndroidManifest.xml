@@ -16,7 +16,8 @@
         android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute">
         <activity android:name=".order.OrderActivity"/>
-        <activity android:name=".register.RegisterActivity" />
+        <activity android:name=".sign.RegisterActivity" />
+        <activity android:name=".sign.LoginActivity" />
         <activity android:name=".detail.DetailActivity" />
         <activity android:name=".category.CategoryActivity" />
         <activity android:name=".basket.BasketActivity" />

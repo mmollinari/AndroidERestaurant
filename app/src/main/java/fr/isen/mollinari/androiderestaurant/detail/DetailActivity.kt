@@ -32,7 +32,7 @@ class DetailActivity : BaseActivity() {
     }
 
     private fun initDetail() {
-        val dish = intent.getSerializableExtra("Dish") as Dish
+        val dish = intent.getSerializableExtra("dish") as Dish
         binding.titleDetail.text = dish.title
         binding.addToBasket.text = getString(R.string.detail_global_amount, dish.getFormattedPrice())
 

@@ -64,7 +64,7 @@ class CategoryActivity : BaseActivity() {
         binding.categoryList.layoutManager = LinearLayoutManager(this)
         binding.categoryList.adapter = CategoryAdapter(dishes) {
             val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra("Dish", it)
+            intent.putExtra("dish", it)
             startActivity(intent)
         }
     }

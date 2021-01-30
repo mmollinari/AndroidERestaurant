@@ -12,8 +12,8 @@ import fr.isen.mollinari.androiderestaurant.databinding.ActivityBasketBinding
 import fr.isen.mollinari.androiderestaurant.detail.DetailActivity
 import fr.isen.mollinari.androiderestaurant.model.Basket
 import fr.isen.mollinari.androiderestaurant.order.OrderActivity
-import fr.isen.mollinari.androiderestaurant.register.RegisterActivity
-import fr.isen.mollinari.androiderestaurant.register.RegisterActivity.Companion.USER_ID
+import fr.isen.mollinari.androiderestaurant.sign.RegisterActivity
+import fr.isen.mollinari.androiderestaurant.sign.RegisterActivity.Companion.USER_ID
 import java.io.File
 
 private lateinit var binding: ActivityBasketBinding
