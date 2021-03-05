@@ -11,10 +11,10 @@ import com.android.volley.toolbox.Volley
 import com.google.android.material.snackbar.Snackbar
 import com.google.gson.GsonBuilder
 import fr.isen.mollinari.androiderestaurant.R
+import fr.isen.mollinari.androiderestaurant.basket.BasketActivity
 import fr.isen.mollinari.androiderestaurant.databinding.ActivityRegisterBinding
 import fr.isen.mollinari.androiderestaurant.detail.DetailActivity
 import fr.isen.mollinari.androiderestaurant.model.RegisterResult
-import fr.isen.mollinari.androiderestaurant.order.OrderActivity
 import org.json.JSONObject
 
 private lateinit var binding: ActivityRegisterBinding
@@ -28,6 +28,7 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.loginAction.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
 
         binding.register.setOnClickListener {
@@ -66,7 +67,8 @@ class RegisterActivity : AppCompatActivity() {
                         getSharedPreferences(DetailActivity.APP_PREFS, Context.MODE_PRIVATE).edit()
                     editor.putString(USER_ID, register.data.userId)
                     editor.apply()
-                    startActivity(Intent(this, OrderActivity::class.java))
+                    startActivity(Intent(this, BasketActivity::class.java))
+                    finish()
                 },
                 {
                     Log.d("RegisterActivity", "That didn't work! ${it}")

@@ -13,6 +13,7 @@
     <string name="basket_title">Panier</string>
     <string name="basket_quantity">quantité : %1s</string>
     <string name="basket_error_empty">Aucun plat dans votre panier</string>
+    <string name="basket_login_info">Vous devez vous inscrire avant de passer commande</string>
     <string name="basket_action">Passer commande</string>
 
     <string name="detail_global_amount">Total %1s</string>
@@ -27,4 +28,9 @@
     <string name="login_title">Connexion</string>
     <string name="login_register">Inscrivez vous si vous n\'avez pas de compte</string>
 
+    <string name="order_title">Commande</string>
+    <string name="order_description">Votre commande a bien été enregistrée.
+        Notre livreur arrivera prochainement chez vous avec votre repas.</string>
+    <string name="order_description_error">Votre commande n\'a pas pu aboutir. Veuilliez réessayer plus tard.</string>
+    <string name="order_back_home">Retour au menu</string>
 </resources>
