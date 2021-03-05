@@ -12,9 +12,9 @@ Il permet notamment de comprendre les concepts de :
 <br />
 
 <p align="center">
-  <img src="images/home.jpg" height="350" title="Accueil">
-  <img src="images/detail.jpg" height="350" title="Pade de détail">
-  <img src="images/login.jpg" height="350" title="Inscription">
-  <img src="images/order_success.jpg" height="350" title="Commande">
-  <img src="images/order_fail.jpg" height="350" title="Erreur lors de la commande">
+  <img src="images/home.png" height="350" title="Accueil">
+  <img src="images/detail.png" height="350" title="Pade de détail">
+  <img src="images/login.png" height="350" title="Inscription">
+  <img src="images/order_success.png" height="350" title="Commande">
+  <img src="images/order_fail.png" height="350" title="Erreur lors de la commande">
 </p>
