@@ -16,9 +16,10 @@ import fr.isen.mollinari.androiderestaurant.sign.LoginActivity
 import fr.isen.mollinari.androiderestaurant.sign.RegisterActivity.Companion.USER_ID
 import java.io.File
 
-private lateinit var binding: ActivityBasketBinding
 
 class BasketActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityBasketBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

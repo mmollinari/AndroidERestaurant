@@ -42,7 +42,7 @@ class BasketAdapter(private val entries: MutableList<ItemBasket>, private val de
                 val elementToRemove = entries[position]
                 deleteClickListener.invoke(elementToRemove)
                 entries.remove(elementToRemove)
-                notifyDataSetChanged()
+                notifyItemRemoved(position)
             }
         }
     }

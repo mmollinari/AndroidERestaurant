@@ -9,14 +9,14 @@ import com.squareup.picasso.Picasso
 import fr.isen.mollinari.androiderestaurant.R
 import fr.isen.mollinari.androiderestaurant.databinding.FragmentDishPhotoBinding
 
-private lateinit var binding: FragmentDishPhotoBinding
 
 class DishPhotoFragment : Fragment() {
 
+    private lateinit var binding: FragmentDishPhotoBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentDishPhotoBinding.inflate(inflater, container, false)
         return binding.root
     }

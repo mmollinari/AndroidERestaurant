@@ -51,7 +51,7 @@ class OrderActivity : AppCompatActivity() {
         )
 
         val stringRequest = JsonObjectRequest(
-            Request.Method.POST, url, jsonData, { _ ->
+            Request.Method.POST, url, jsonData, {
                 displayContent(true)
             },
             {

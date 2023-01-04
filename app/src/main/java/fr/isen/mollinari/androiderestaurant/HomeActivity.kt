@@ -7,9 +7,10 @@ import androidx.annotation.StringRes
 import fr.isen.mollinari.androiderestaurant.category.CategoryActivity
 import fr.isen.mollinari.androiderestaurant.databinding.ActivityHomeBinding
 
-private lateinit var binding: ActivityHomeBinding
 
 class HomeActivity : BaseActivity() {
+
+    private lateinit var binding: ActivityHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

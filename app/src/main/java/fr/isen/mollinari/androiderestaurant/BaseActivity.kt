@@ -16,10 +16,10 @@ open class BaseActivity : AppCompatActivity() {
         val menuView = menu.findItem(R.id.basket).actionView
         val count = getSharedPreferences(
             DetailActivity.APP_PREFS, Context.MODE_PRIVATE).getInt(DetailActivity.BASKET_COUNT, 0)
-        val countText = (menuView.findViewById(R.id.cartCount) as? TextView)
+        val countText = (menuView?.findViewById(R.id.cartCount) as? TextView)
         countText?.text = count.toString()
         countText?.isVisible = count > 0
-        menuView.setOnClickListener {
+        menuView?.setOnClickListener {
             startActivity(Intent(this, BasketActivity::class.java))
         }
         return true

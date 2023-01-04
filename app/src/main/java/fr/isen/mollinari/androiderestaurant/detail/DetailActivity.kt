@@ -14,11 +14,11 @@ import fr.isen.mollinari.androiderestaurant.model.Dish
 import fr.isen.mollinari.androiderestaurant.model.ItemBasket
 import java.io.File
 
-private lateinit var binding: ActivityDetailBinding
 
 class DetailActivity : BaseActivity() {
 
-    lateinit var sharedPreferences: SharedPreferences
+    private lateinit var binding: ActivityDetailBinding
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

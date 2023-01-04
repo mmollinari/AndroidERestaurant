@@ -18,10 +18,10 @@ import fr.isen.mollinari.androiderestaurant.model.Dish
 import fr.isen.mollinari.androiderestaurant.model.MenuResult
 import org.json.JSONObject
 
-private lateinit var binding: ActivityCategoryBinding
 
 class CategoryActivity : BaseActivity() {
 
+    private lateinit var binding: ActivityCategoryBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -51,7 +51,7 @@ class CategoryActivity : BaseActivity() {
                 }
             },
             {
-                Log.d("CategoryActivity", "That didn't work! ${it}")
+                Log.d("CategoryActivity", "That didn't work! $it")
                 binding.categoryLoading.visibility = View.GONE
                 binding.categoryErrorMessage.text = getString(R.string.category_error_server, category)
             })

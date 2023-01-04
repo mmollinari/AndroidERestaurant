@@ -17,9 +17,10 @@ import fr.isen.mollinari.androiderestaurant.detail.DetailActivity
 import fr.isen.mollinari.androiderestaurant.model.RegisterResult
 import org.json.JSONObject
 
-private lateinit var binding: ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -65,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
                     finish()
                 },
                 {
-                    Log.d("RegisterActivity", "That didn't work! ${it}")
+                    Log.d("RegisterActivity", "That didn't work! $it")
                 })
 
             Volley.newRequestQueue(this).add(stringRequest)
